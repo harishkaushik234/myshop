@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Healthy",
+    "cropType": "Generic crop",
+    "description": "Leaf color distribution looks balanced and there are no strong stress signals.",
+    "treatment": "Continue regular watering, nutrient balance, and field monitoring."
+  },
+  {
+    "label": "Leaf Blight",
+    "cropType": "Generic crop",
+    "description": "Brown or scorched regions often point to fungal leaf blight stress.",
+    "treatment": "Remove badly infected leaves, avoid overhead watering, and apply a suitable bio-fungicide."
+  },
+  {
+    "label": "Early Blight",
+    "cropType": "Tomato",
+    "description": "Dry brown lesions and patchy necrosis commonly match early blight-like stress on solanaceous crops.",
+    "treatment": "Remove affected lower leaves, improve ventilation, and follow a fungicide plan recommended for blight-prone crops."
+  },
+  {
+    "label": "Nitrogen Deficiency",
+    "cropType": "Maize",
+    "description": "Yellowing patterns can indicate nutrient deficiency, especially low nitrogen.",
+    "treatment": "Use a balanced nitrogen-rich fertilizer and review soil health."
+  },
+  {
+    "label": "Rust Infection",
+    "cropType": "Generic crop",
+    "description": "Orange-brown tones may suggest rust-like fungal damage on the leaf surface.",
+    "treatment": "Improve airflow, remove affected leaves, and use a recommended rust-control fungicide."
+  }
+]

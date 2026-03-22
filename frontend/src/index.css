@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  @apply bg-slate-100 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.glass-panel {
+  @apply rounded-3xl border border-white/60 bg-white/85 shadow-panel backdrop-blur dark:border-slate-800 dark:bg-slate-900/85;
+}
+
+.section-title {
+  @apply text-xl font-semibold text-slate-900 dark:text-slate-100;
+}
+
+.app-shell {
+  @apply min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(244,183,64,0.16),transparent_28%),linear-gradient(180deg,#f8fafc_0%,#eefbf3_52%,#ecfccb_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(40,145,91,0.22),transparent_28%),linear-gradient(180deg,#020617_0%,#0f172a_55%,#111827_100%)];
+}
