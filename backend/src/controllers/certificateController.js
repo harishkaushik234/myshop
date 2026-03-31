@@ -26,6 +26,29 @@ export const createCertificate = async (req, res) => {
   res.status(201).json(certificate);
 };
 
+export const updateCertificate = async (req, res) => {
+  const certificate = await Certificate.findById(req.params.id);
+
+  if (!certificate) {
+    return res.status(404).json({ message: "Certificate not found" });
+  }
+
+  certificate.title = req.body.title ?? certificate.title;
+  certificate.description = req.body.description ?? certificate.description;
+  certificate.issuer = req.body.issuer ?? certificate.issuer;
+  certificate.issuedOn = req.body.issuedOn || undefined;
+
+  if (req.file) {
+    const uploadedImage = await uploadToCloudinary(req.file.buffer, "agroshop/certificates");
+    await deleteFromCloudinary(certificate.imagePublicId);
+    certificate.image = uploadedImage.secure_url;
+    certificate.imagePublicId = uploadedImage.public_id;
+  }
+
+  await certificate.save();
+  res.json(certificate);
+};
+
 export const deleteCertificate = async (req, res) => {
   const certificate = await Certificate.findById(req.params.id);
 

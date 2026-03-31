@@ -150,7 +150,14 @@ const translations = {
     generalMessage: "General message",
     reviewed: "Reviewed",
     newStatus: "New",
-    certificatesSubtitle: "See the certificates and trust marks earned by the shopkeeper."
+    certificatesSubtitle: "See the certificates and trust marks earned by the shopkeeper.",
+    issuedOn: "Issued on",
+    viewCertificate: "View certificate",
+    certificatePreview: "Certificate image",
+    openFullImage: "Open full image",
+    certificateDescriptionFallback: "Certificate details will appear here.",
+    noOrdersYet: "You have not placed any order yet.",
+    noOrdersYetText: "Browse products from the shop and place your first order to see your order history here."
   },
   hi: {
     appName: "SUNIL KHAD BEEJ BHANDER",
@@ -304,7 +311,14 @@ Object.assign(translations.hi, {
   generalMessage: "Samanya sandesh",
   reviewed: "Review ho chuka hai",
   newStatus: "Naya",
-  certificatesSubtitle: "Dukaan ko mile certificate aur bharose ki jankari dekhein."
+  certificatesSubtitle: "Dukaan ko mile certificate aur bharose ki jankari dekhein.",
+  issuedOn: "Jari ki tarikh",
+  viewCertificate: "Certificate dekhein",
+  certificatePreview: "Certificate image",
+  openFullImage: "Puri image kholein",
+  certificateDescriptionFallback: "Certificate ki jankari yahan dikhai jayegi.",
+  noOrdersYet: "Aapne abhi tak koi order nahi kiya hai.",
+  noOrdersYetText: "Dukaan ke products dekhein aur apna pehla order karein. Order history yahin dikhai degi."
 });
 
 Object.assign(translations.hi, {

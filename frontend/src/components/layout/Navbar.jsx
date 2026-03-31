@@ -80,7 +80,7 @@ const Navbar = ({ onOpenSidebar }) => {
             <select
               value={language}
               onChange={(event) => setLanguage(event.target.value)}
-              className="bg-transparent text-sm font-medium text-slate-900 outline-none dark:text-slate-100"
+              className="app-select rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 pr-7 text-sm font-medium text-slate-900 outline-none transition dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
             >
               <option value="en">{t("english")}</option>
               <option value="hi">{t("hindi")}</option>
@@ -118,7 +118,7 @@ const Navbar = ({ onOpenSidebar }) => {
             <select
               value={language}
               onChange={(event) => setLanguage(event.target.value)}
-              className="max-w-20 bg-transparent text-sm font-medium text-slate-900 outline-none dark:text-slate-100"
+              className="app-select max-w-24 rounded-full border border-slate-200 bg-white/90 px-2 py-1 pr-6 text-sm font-medium text-slate-900 outline-none transition dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
             >
               <option value="en">{t("english")}</option>
               <option value="hi">{t("hindi")}</option>

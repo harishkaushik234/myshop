@@ -22,3 +22,25 @@ body {
 .app-shell {
   @apply min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(244,183,64,0.16),transparent_28%),linear-gradient(180deg,#f8fafc_0%,#eefbf3_52%,#ecfccb_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(40,145,91,0.22),transparent_28%),linear-gradient(180deg,#020617_0%,#0f172a_55%,#111827_100%)];
 }
+
+.app-select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) calc(50% - 2px),
+    calc(100% - 9px) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.app-select option {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+html:not(.dark) .app-select option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
