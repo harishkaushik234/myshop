@@ -25,13 +25,18 @@ const CartPage = () => {
   };
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[1fr_360px]">
-      <div className="glass-panel p-6">
+    <div className="grid gap-4 sm:gap-6 xl:grid-cols-[1fr_360px]">
+      <div className="glass-panel p-4 sm:p-6">
         <h2 className="section-title">{t("yourCart")}</h2>
         <div className="mt-4 space-y-4">
+          {!cart.length ? (
+            <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-5 text-sm text-slate-600 dark:border-slate-700 dark:bg-slate-800/60 dark:text-slate-300">
+              Your cart is empty. Add products from the shop to continue.
+            </div>
+          ) : null}
           {cart.map((item) => (
-            <div key={item._id} className="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-slate-50 p-4 dark:bg-slate-800">
-              <div>
+            <div key={item._id} className="flex flex-col gap-3 rounded-2xl bg-slate-50 p-4 dark:bg-slate-800 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
                 <p className="font-medium text-slate-900 dark:text-slate-100">{item.name}</p>
                 <p className="text-sm text-slate-500 dark:text-slate-300">Rs. {item.price}</p>
               </div>
@@ -40,14 +45,14 @@ const CartPage = () => {
                 min="0"
                 value={item.quantity}
                 onChange={(event) => updateCartQuantity(item._id, Number(event.target.value))}
-                className="w-24 rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 sm:w-24"
               />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="glass-panel space-y-4 p-6">
+      <div className="glass-panel space-y-4 p-4 sm:p-6 xl:sticky xl:top-28 xl:self-start">
         <h2 className="section-title">{t("checkout")}</h2>
         <textarea
           value={shippingAddress}

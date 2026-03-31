@@ -144,11 +144,11 @@ const AdminProductsPage = () => {
         </div>
       </form>
 
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 xl:grid-cols-2">
         {products.map((product) => (
           <div key={product._id} className="space-y-3">
             <ProductCard product={product} showAdminMeta />
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="grid gap-3 sm:grid-cols-2">
               <button
                 onClick={() => startEdit(product)}
                 className="rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white"

@@ -22,7 +22,7 @@ const ChatBox = ({
             <button
               key={contact._id}
               onClick={() => onSelectContact(contact)}
-              className={`min-w-[220px] rounded-2xl px-4 py-3 text-left transition lg:w-full lg:min-w-0 ${
+              className={`min-w-[180px] rounded-2xl px-4 py-3 text-left transition sm:min-w-[220px] lg:w-full lg:min-w-0 ${
                 selectedContact?._id === contact._id
                   ? "bg-brand-500 text-white shadow-lg shadow-brand-500/20"
                   : "bg-slate-50 text-slate-900 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
@@ -60,12 +60,12 @@ const ChatBox = ({
         </div>
       </div>
 
-      <div className="glass-panel flex min-h-[420px] flex-col lg:min-h-[520px]">
+      <div className="glass-panel flex min-h-[380px] flex-col lg:min-h-[520px]">
         <div className="border-b border-slate-200 px-5 py-4 dark:border-slate-800">
           <h3 className="section-title">{selectedContact?.name || t("pickContact")}</h3>
         </div>
 
-        <div className="flex-1 space-y-3 overflow-y-auto px-5 py-4">
+        <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4 sm:px-5">
           {messages.map((message) => {
             const ownMessage = (message.sender?._id || message.sender) === currentUserId;
 

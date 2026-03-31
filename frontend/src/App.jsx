@@ -29,7 +29,7 @@ const DashboardLayout = () => {
       <Sidebar mobileOpen={mobileSidebarOpen} onClose={() => setMobileSidebarOpen(false)} />
       <div className="flex min-h-screen min-w-0 flex-col">
         <Navbar onOpenSidebar={() => setMobileSidebarOpen(true)} />
-        <main className="flex-1 px-3 py-4 sm:px-4 sm:py-6 lg:px-6">
+        <main className="flex-1 px-2.5 py-3 sm:px-4 sm:py-6 lg:px-6">
           <Routes>
             <Route index element={<RoleBasedHome />} />
             <Route path="products" element={<RoleBasedProducts />} />

@@ -16,7 +16,7 @@ const ClientProductsPage = () => {
 
   return (
     <div className="space-y-6">
-      <div className="glass-panel grid gap-4 p-5 md:grid-cols-[1fr_220px]">
+      <div className="glass-panel grid gap-3 p-4 sm:gap-4 sm:p-5 md:grid-cols-[1fr_220px]">
         <input
           value={filters.search}
           onChange={(event) => setFilters({ ...filters, search: event.target.value })}
@@ -37,7 +37,7 @@ const ClientProductsPage = () => {
         </select>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 xl:grid-cols-2">
         {products.map((product) => (
           <ProductCard
             key={product._id}

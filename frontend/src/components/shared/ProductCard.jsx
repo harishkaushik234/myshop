@@ -5,13 +5,13 @@ const ProductCard = ({ product, onAddToCart, onViewDetails, showAdminMeta = fals
   const { t } = useLanguage();
 
   return (
-    <article className="group overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-panel transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-900">
+    <article className="group overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-panel transition hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-900 sm:rounded-[1.75rem]">
       <button
         type="button"
         onClick={() => onViewDetails?.(product)}
         className="block w-full text-left"
       >
-        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-brand-100 via-white to-amber-100 sm:h-56">
+        <div className="relative h-44 overflow-hidden bg-gradient-to-br from-brand-100 via-white to-amber-100 sm:h-56">
           <img
             src={product.image || "https://placehold.co/600x400?text=Agro+Product"}
             alt={product.name}
@@ -27,11 +27,11 @@ const ProductCard = ({ product, onAddToCart, onViewDetails, showAdminMeta = fals
 
       <div className="space-y-4 p-4 sm:p-5">
         <div className="flex items-start justify-between gap-4">
-          <div>
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 sm:text-xl">{product.name}</h3>
+          <div className="min-w-0">
+            <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 sm:text-xl">{product.name}</h3>
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-300">{t("stock")}: {product.stock}</p>
           </div>
-          <p className="text-base font-bold text-brand-700 sm:text-lg">Rs. {product.price}</p>
+          <p className="shrink-0 text-base font-bold text-brand-700 sm:text-lg">Rs. {product.price}</p>
         </div>
 
         <p className="min-h-[72px] overflow-hidden text-sm leading-6 text-slate-600 dark:text-slate-300">

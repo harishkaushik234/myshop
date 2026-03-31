@@ -39,7 +39,7 @@ const Sidebar = ({ mobileOpen = false, onClose }) => {
         onClick={onClose}
       />
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-[86vw] max-w-72 flex-col gap-6 border-r border-slate-800 bg-slate-950 px-4 py-5 text-white transition-transform duration-300 lg:static lg:w-72 lg:translate-x-0 lg:py-6 ${
+        className={`fixed inset-y-0 left-0 z-40 flex w-[88vw] max-w-80 flex-col gap-5 border-r border-slate-800 bg-slate-950 px-3 py-4 text-white transition-transform duration-300 lg:static lg:w-72 lg:translate-x-0 lg:gap-6 lg:px-4 lg:py-6 ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -54,13 +54,13 @@ const Sidebar = ({ mobileOpen = false, onClose }) => {
           </button>
         </div>
 
-        <div className="rounded-3xl bg-gradient-to-br from-brand-700 via-brand-500 to-sun p-5 text-slate-950">
+        <div className="rounded-3xl bg-gradient-to-br from-brand-700 via-brand-500 to-sun p-4 text-slate-950 lg:p-5">
           <ShopLogo compact light />
           <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em]">{t("smartAgriculture")}</p>
-          <h2 className="mt-2 text-xl font-bold sm:text-2xl">{t("cropCareLine")}</h2>
+          <h2 className="mt-2 text-lg font-bold leading-tight sm:text-2xl">{t("cropCareLine")}</h2>
         </div>
 
-        <nav className="space-y-2 overflow-y-auto">
+        <nav className="space-y-2 overflow-y-auto pr-1">
           {links.map((link) => {
             const Icon = link.icon;
             const active = location.pathname === link.to;

@@ -27,8 +27,8 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-hero px-4 py-6 sm:px-6 sm:py-10">
-      <div className="mx-auto max-w-3xl rounded-[2rem] bg-white p-5 shadow-panel dark:bg-slate-900 sm:p-8 lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:gap-8 lg:p-10">
+    <div className="min-h-screen bg-hero px-3 py-4 sm:px-6 sm:py-10">
+      <div className="mx-auto max-w-4xl rounded-[2rem] bg-white p-4 shadow-panel dark:bg-slate-900 sm:p-8 lg:grid lg:grid-cols-[0.95fr_1.05fr] lg:gap-8 lg:p-10">
         <div className="mb-8 lg:mb-0">
           <ShopLogo />
           <p className="mt-6 text-sm font-semibold uppercase tracking-[0.3em] text-brand-700">{t("createAccount")}</p>
@@ -81,7 +81,7 @@ const RegisterPage = () => {
           <select
             value={form.role}
             onChange={(event) => setForm({ ...form, role: event.target.value })}
-            className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 outline-none ring-brand-500 focus:ring-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 sm:col-span-2"
+            className="app-select rounded-2xl border border-slate-200 bg-white px-4 py-3 pr-10 text-slate-900 outline-none ring-brand-500 focus:ring-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 sm:col-span-2"
           >
             <option value="client">{t("clientFarmer")}</option>
             <option value="admin">{t("adminShopkeeper")}</option>

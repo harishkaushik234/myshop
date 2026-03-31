@@ -85,7 +85,7 @@ const AdminOverviewPage = () => {
         <StatsCard label={t("sales")} value={`Rs. ${data.totalSales}`} accent="bg-emerald-500" />
       </div>
 
-      <div className="glass-panel p-6">
+      <div className="glass-panel p-4 sm:p-6">
         <h2 className="section-title">{t("recentRewardActivity")}</h2>
         <div className="mt-4 space-y-3">
           {data.recentRewards.map((reward) => (
@@ -100,28 +100,30 @@ const AdminOverviewPage = () => {
         </div>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
-        <div className="glass-panel p-6">
+      <div className="grid gap-4 sm:gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+        <div className="glass-panel p-4 sm:p-6">
           <h2 className="section-title">{t("clientRewardBoard")}</h2>
           <div className="mt-4 space-y-3">
             {users.map((user) => (
-              <div key={user._id} className="flex items-center justify-between rounded-2xl bg-slate-50 p-4 dark:bg-slate-800">
-                <div>
+              <div key={user._id} className="flex flex-col gap-3 rounded-2xl bg-slate-50 p-4 dark:bg-slate-800 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-w-0">
                   <p className="font-medium text-slate-900 dark:text-slate-100">{user.name}</p>
                   <p className="text-sm text-slate-500 dark:text-slate-300">{user.email}</p>
                 </div>
-                <p className="font-semibold text-brand-700">{user.rewardPoints} pts</p>
+                <p className="self-start rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-700 dark:bg-brand-500/15 dark:text-brand-200">
+                  {user.rewardPoints} pts
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        <form onSubmit={grantBonus} className="glass-panel space-y-4 p-6">
+        <form onSubmit={grantBonus} className="glass-panel space-y-4 p-4 sm:p-6">
           <h2 className="section-title">{t("grantBonusReward")}</h2>
           <select
             value={bonusForm.userId}
             onChange={(event) => setBonusForm({ ...bonusForm, userId: event.target.value })}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+            className="app-select w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 pr-10 text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
             disabled={!eligibleUsers.length}
           >
             {eligibleUsers.length ? (

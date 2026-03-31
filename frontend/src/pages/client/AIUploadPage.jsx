@@ -39,7 +39,7 @@ const AIUploadPage = () => {
   };
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
+    <div className="grid gap-4 sm:gap-6 xl:grid-cols-[0.9fr_1.1fr]">
       <form onSubmit={handleSubmit} className="glass-panel space-y-4 p-4 sm:p-6">
         <h2 className="section-title">{t("uploadCropImage")}</h2>
         <input
@@ -49,7 +49,9 @@ const AIUploadPage = () => {
           className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
         />
         {preview ? (
-          <img src={preview} alt="Preview" className="h-56 w-full rounded-3xl object-cover sm:h-72" />
+          <div className="flex h-56 items-center justify-center rounded-3xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-900 sm:h-72 sm:p-4">
+            <img src={preview} alt="Preview" className="h-full w-full rounded-2xl object-contain" />
+          </div>
         ) : (
           <div className="flex h-56 items-center justify-center rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-4 text-center text-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-500 sm:h-72">
             {t("imagePreview")}
@@ -75,8 +77,8 @@ const AIUploadPage = () => {
             <p
               className={`inline-block rounded-full px-4 py-2 text-sm font-semibold ${
                 isInconclusive
-                  ? "bg-amber-100 text-amber-800"
-                  : "bg-brand-50 text-brand-700"
+                  ? "bg-amber-100 text-amber-800 dark:bg-amber-500/15 dark:text-amber-300"
+                  : "bg-brand-50 text-brand-700 dark:bg-brand-500/15 dark:text-brand-200"
               }`}
             >
               {t("confidence")}: {Math.round(result.confidence * 100)}%
@@ -86,7 +88,7 @@ const AIUploadPage = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
                 {isInconclusive ? t("improveScan") : t("suggestedTreatment")}
               </p>
-              <p className={`mt-2 ${isInconclusive ? "text-slate-700" : "text-amber-950"}`}>
+              <p className={`mt-2 ${isInconclusive ? "text-slate-700 dark:text-slate-200" : "text-amber-950 dark:text-amber-100"}`}>
                 {result.treatment}
               </p>
             </div>

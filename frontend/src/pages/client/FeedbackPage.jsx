@@ -54,7 +54,7 @@ const FeedbackPage = () => {
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
+      <div className="grid gap-4 sm:gap-6 xl:grid-cols-[0.9fr_1.1fr]">
         <div className="glass-panel space-y-5 p-4 sm:p-6">
           <div>
             <h2 className="section-title">{t("contactInformation")}</h2>
@@ -109,7 +109,7 @@ const FeedbackPage = () => {
           <select
             value={form.type}
             onChange={(event) => setForm({ ...form, type: event.target.value })}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+            className="app-select w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 pr-10 text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
           >
             <option value="feedback">{t("feedback")}</option>
             <option value="contact">{t("contactUs")}</option>
@@ -142,7 +142,7 @@ const FeedbackPage = () => {
             <select
               value={form.rating}
               onChange={(event) => setForm({ ...form, rating: Number(event.target.value) })}
-              className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+              className="app-select w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 pr-10 text-slate-900 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
             >
               {[5, 4, 3, 2, 1].map((rating) => (
                 <option key={rating} value={rating}>
@@ -163,7 +163,7 @@ const FeedbackPage = () => {
         </form>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 xl:grid-cols-2">
         <div className="glass-panel p-4 sm:p-6">
           <h2 className="section-title">{t("publicReviews")}</h2>
           <div className="mt-4 space-y-4">
@@ -177,7 +177,7 @@ const FeedbackPage = () => {
                       </h3>
                       <p className="mt-1 text-sm text-slate-500 dark:text-slate-300">{item.name}</p>
                     </div>
-                    <div className="flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-600 dark:bg-amber-500/10 dark:text-amber-300">
+                    <div className="inline-flex items-center gap-1 self-start rounded-full bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-600 dark:bg-amber-500/10 dark:text-amber-300">
                       <Star size={14} fill="currentColor" />
                       {item.rating}/5
                     </div>
@@ -210,7 +210,11 @@ const FeedbackPage = () => {
                         {item.subject || t("generalMessage")}
                       </h3>
                     </div>
-                    {item.type === "feedback" ? <p className="text-sm font-semibold text-brand-700">{item.rating}/5</p> : null}
+                    {item.type === "feedback" ? (
+                      <p className="self-start rounded-full bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-700 dark:bg-amber-500/10 dark:text-amber-300">
+                        {item.rating}/5
+                      </p>
+                    ) : null}
                   </div>
                   <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{item.message}</p>
                   <p className="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-300">
